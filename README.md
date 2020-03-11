@@ -62,8 +62,7 @@ Animal "a 2..*" o-left-- "c 1..*" Cage
 @enduml
 ```
 
-Code example for light theme
-
+Code example for light theme.
 ```
 @startuml
 !define LIGHT

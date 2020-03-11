@@ -2,7 +2,9 @@
 A style for plantUML
 
 ## Usage
-Code example for dark theme.
+
+### Dark theme
+Code example for dark theme
 ```
 @startuml
 !define DARK
@@ -61,7 +63,9 @@ Animal <|-- Otter
 Animal "a 2..*" o-left-- "c 1..*" Cage
 @enduml
 ```
+![zooDark](https://user-images.githubusercontent.com/16030020/76464158-16d5ea80-63e5-11ea-9d14-1e413b408d42.png)
 
+### Light theme
 Code example for light theme.
 ```
 @startuml
@@ -121,3 +125,5 @@ Animal <|-- Otter
 Animal "a 2..*" o-left-- "c 1..*" Cage
 @enduml
 ```
+
+![zooLight](https://user-images.githubusercontent.com/16030020/76464098-fc9c0c80-63e4-11ea-80a4-b75e789820ef.png)

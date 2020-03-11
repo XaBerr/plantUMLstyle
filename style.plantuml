@@ -1,0 +1,196 @@
+@startuml
+!ifndef FONTNAME
+!define FONTNAME "Verdana"
+!endif
+
+!ifndef FONTSIZE
+!define FONTSIZE 14
+!endif
+
+!ifdef DARK
+!define ACCENT ca0041
+!define ACCENTDARK 1b1b1b
+skinparam stereotypeCBackgroundColor ACCENT
+!define PRIMARY fff
+!define SECONDARY aaa
+!define ARROWCOLOR fff
+!define ARROWFONTCOLOR bbb
+!define BORDERCOLOR 1b1b1b
+!define BOXBG 2e2e2e
+skinparam backgroundColor 777
+!endif
+
+!ifdef LIGHT
+!define ACCENT b1dbff
+!define ACCENTDARK 81a1bd
+skinparam stereotypeCBackgroundColor ACCENT
+!define PRIMARY 000
+!define SECONDARY 333
+!define ARROWCOLOR 000
+!define ARROWFONTCOLOR 333
+!define BORDERCOLOR aaa
+!define BOXBG fff
+skinparam backgroundColor eee
+!endif
+
+!function fontStyle()
+  fontColor PRIMARY
+  fontName FONTNAME
+  fontSize FONTSIZE
+  stereotypeFontColor SECONDARY
+  stereotypeFontSize FONTSIZE
+!endfunction
+
+!function basicStyle()
+  backgroundColor BOXBG
+  borderColor BORDERCOLOR
+!endfunction
+
+!function accentStyle()
+  backgroundColor ACCENT
+  borderColor ACCENTDARK
+!endfunction
+
+!function arrowStyle()
+  arrowColor ARROWCOLOR
+  arrowFontName FONTNAME
+  arrowFontColor ARROWFONTCOLOR
+  arrowFontSize FONTSIZE
+!endfunction
+
+' Class diagrams
+skinparam roundcorner 10
+skinparam BoxPadding 20
+
+skinparam circledCharacter {
+  radius 8
+  fontSize FONTSIZE
+  fontName FONTNAME
+}
+
+skinparam class {
+  basicStyle()
+  fontStyle()
+  arrowStyle()
+  attributeFontColor SECONDARY
+  attributeFontSize FONTSIZE
+  attributeIconSize FONTSIZE
+}
+
+' Sequence diagrams
+
+skinparam actor {
+  accentStyle()
+  fontStyle()
+}
+
+skinparam participant {
+  basicStyle()
+  fontStyle()
+}
+
+' Component diagrams
+
+skinparam interface {
+  accentStyle()
+  fontStyle()
+}
+
+skinparam component {
+  basicStyle()
+  fontStyle()
+}
+
+skinparam node {
+  basicStyle()
+  fontStyle()
+}
+
+skinparam database {
+  basicStyle()
+  fontStyle()
+}
+
+skinparam queue {
+  basicStyle()
+  fontStyle()
+}
+
+' Use Case diagrams
+
+skinparam usecase {
+  basicStyle()
+  fontStyle()
+  arrowStyle()
+}
+
+skinparam activity {
+  basicStyle()
+  fontStyle()
+  arrowStyle()
+}
+
+skinparam sequence {
+  fontStyle()
+  arrowStyle()
+
+  lifeLineBorderColor ARROWCOLOR
+  lifeLineBackgroundColor ARROWFONTCOLOR
+}
+
+skinparam boundary {
+  accentStyle()
+  fontStyle()
+}
+
+skinparam control {
+  accentStyle()
+  fontStyle()
+}
+
+skinparam entity {
+  accentStyle()
+  fontStyle()
+}
+
+' State diagrams
+
+skinparam state {
+  basicStyle()
+  fontStyle()
+  arrowStyle()
+  startColor ACCENT
+  endColor ACCENTDARK
+}
+
+' Object diagrams
+
+skinparam object {
+  basicStyle()
+  fontStyle()
+  arrowStyle()
+}
+
+' Common
+
+skinparam note {
+  accentStyle()
+  fontStyle()
+}
+
+skinparam cloud {
+  basicStyle()
+  fontStyle()
+  arrowStyle()
+}
+
+skinparam rectangle {
+  basicStyle()
+  fontStyle()
+}
+
+skinparam storage {
+  basicStyle()
+  fontStyle()
+}
+@enduml

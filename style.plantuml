@@ -169,6 +169,9 @@ skinparam object {
   basicStyle()
   fontStyle()
   arrowStyle()
+  attributeFontColor SECONDARY
+  attributeFontSize FONTSIZE
+  attributeIconSize FONTSIZE
 }
 
 ' Common

@@ -1,61 +1,62 @@
 @startuml
-!ifndef FONTNAME
-!$FONTNAME = "Verdana"
+
+!ifndef $FONTNAME
+  !$FONTNAME = "Verdana"
 !endif
 
-!ifndef FONTSIZE
-!$FONTSIZE = 14
+!ifndef $FONTSIZE
+  !$FONTSIZE = 14
 !endif
 
-!ifdef DARK
-!$ACCENT = ca0041
-!$ACCENTDARK = 1b1b1b
-skinparam stereotypeCBackgroundColor ACCENT
-!$PRIMARY = fff
-!$SECONDARY = aaa
-!$ARROWCOLOR = fff
-!$ARROWFONTCOLOR = bbb
-!$BORDERCOLOR = 1b1b1b
-!$BOXBG = 2e2e2e
-skinparam backgroundColor 777
+!if ($DARK == 1)
+  !$ACCENT = "ca0041"
+  !$ACCENTDARK = "1b1b1b"
+  skinparam stereotypeCBackgroundColor $ACCENT
+  !$PRIMARY = "fff"
+  !$SECONDARY = "aaa"
+  !$ARROWCOLOR = "fff"
+  !$ARROWFONTCOLOR = "bbb"
+  !$BORDERCOLOR = "1b1b1b"
+  !$BOXBG = "2e2e2e"
+  skinparam backgroundColor 777
 !endif
 
-!ifdef LIGHT
-!$ACCENT = b1dbff
-!$ACCENTDARK = 81a1bd
-skinparam stereotypeCBackgroundColor ACCENT
-!$PRIMARY = 000
-!$SECONDARY = 333
-!$ARROWCOLOR = 000
-!$ARROWFONTCOLOR = 333
-!$BORDERCOLOR = aaa
-!$BOXBG = fff
-skinparam backgroundColor eee
+!if ($LIGHT == 1)
+  !$ACCENT = "b1dbff"
+  !$ACCENTDARK = "81a1bd"
+  skinparam stereotypeCBackgroundColor $ACCENT
+  !$PRIMARY = "000"
+  !$SECONDARY = "333"
+  !$ARROWCOLOR = "000"
+  !$ARROWFONTCOLOR = "333"
+  !$BORDERCOLOR = "aaa"
+  !$BOXBG = "fff"
+  skinparam backgroundColor eee
 !endif
 
 !procedure fontStyle()
-  fontColor PRIMARY
-  fontName FONTNAME
-  fontSize FONTSIZE
-  stereotypeFontColor SECONDARY
-  stereotypeFontSize FONTSIZE
+  fontColor $PRIMARY
+  fontName $FONTNAME
+  fontSize $FONTSIZE
+  stereotypeFontColor $SECONDARY
+  stereotypeFontSize $FONTSIZE
 !endprocedure
 
 !procedure basicStyle()
-  backgroundColor BOXBG
-  borderColor BORDERCOLOR
+  backgroundColor $BOXBG
+  borderColor $BORDERCOLOR
 !endprocedure
 
 !procedure accentStyle()
-  backgroundColor ACCENT
-  borderColor ACCENTDARK
+  backgroundColor $ACCENT
+  borderColor $ACCENTDARK
 !endprocedure
 
 !procedure arrowStyle()
-  arrowColor ARROWCOLOR
-  arrowFontName FONTNAME
-  arrowFontColor ARROWFONTCOLOR
-  arrowFontSize FONTSIZE
+  arrowColor $ARROWCOLOR
+  arrowFontName $FONTNAME
+  arrowFontColor $ARROWFONTCOLOR
+  arrowFontSize $FONTSIZE
 !endprocedure
 
 ' Class diagrams
@@ -64,17 +65,17 @@ skinparam BoxPadding 20
 
 skinparam circledCharacter {
   radius 8
-  fontSize FONTSIZE
-  fontName FONTNAME
+  fontSize $FONTSIZE
+  fontName $FONTNAME
 }
 
 skinparam class {
   basicStyle()
   fontStyle()
   arrowStyle()
-  attributeFontColor SECONDARY
-  attributeFontSize FONTSIZE
-  attributeIconSize FONTSIZE
+  attributeFontColor $SECONDARY
+  attributeFontSize $FONTSIZE
+  attributeIconSize $FONTSIZE
 }
 
 ' Sequence diagrams
@@ -134,8 +135,8 @@ skinparam sequence {
   fontStyle()
   arrowStyle()
 
-  lifeLineBorderColor ARROWCOLOR
-  lifeLineBackgroundColor ARROWFONTCOLOR
+  lifeLineBorderColor $ARROWCOLOR
+  lifeLineBackgroundColor $ARROWFONTCOLOR
 }
 
 skinparam boundary {
@@ -159,8 +160,8 @@ skinparam state {
   basicStyle()
   fontStyle()
   arrowStyle()
-  startColor ACCENT
-  endColor ACCENTDARK
+  startColor $ACCENT
+  endColor $ACCENTDARK
 }
 
 ' Object diagrams
@@ -169,9 +170,9 @@ skinparam object {
   basicStyle()
   fontStyle()
   arrowStyle()
-  attributeFontColor SECONDARY
-  attributeFontSize FONTSIZE
-  attributeIconSize FONTSIZE
+  attributeFontColor $SECONDARY
+  attributeFontSize $FONTSIZE
+  attributeIconSize $FONTSIZE
 }
 
 ' Common

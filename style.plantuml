@@ -1,62 +1,62 @@
 @startuml
 !ifndef FONTNAME
-!define FONTNAME "Verdana"
+!$FONTNAME = "Verdana"
 !endif
 
 !ifndef FONTSIZE
-!define FONTSIZE 14
+!$FONTSIZE = 14
 !endif
 
 !ifdef DARK
-!define ACCENT ca0041
-!define ACCENTDARK 1b1b1b
+!$ACCENT = ca0041
+!$ACCENTDARK = 1b1b1b
 skinparam stereotypeCBackgroundColor ACCENT
-!define PRIMARY fff
-!define SECONDARY aaa
-!define ARROWCOLOR fff
-!define ARROWFONTCOLOR bbb
-!define BORDERCOLOR 1b1b1b
-!define BOXBG 2e2e2e
+!$PRIMARY = fff
+!$SECONDARY = aaa
+!$ARROWCOLOR = fff
+!$ARROWFONTCOLOR = bbb
+!$BORDERCOLOR = 1b1b1b
+!$BOXBG = 2e2e2e
 skinparam backgroundColor 777
 !endif
 
 !ifdef LIGHT
-!define ACCENT b1dbff
-!define ACCENTDARK 81a1bd
+!$ACCENT = b1dbff
+!$ACCENTDARK = 81a1bd
 skinparam stereotypeCBackgroundColor ACCENT
-!define PRIMARY 000
-!define SECONDARY 333
-!define ARROWCOLOR 000
-!define ARROWFONTCOLOR 333
-!define BORDERCOLOR aaa
-!define BOXBG fff
+!$PRIMARY = 000
+!$SECONDARY = 333
+!$ARROWCOLOR = 000
+!$ARROWFONTCOLOR = 333
+!$BORDERCOLOR = aaa
+!$BOXBG = fff
 skinparam backgroundColor eee
 !endif
 
-!function fontStyle()
+!procedure fontStyle()
   fontColor PRIMARY
   fontName FONTNAME
   fontSize FONTSIZE
   stereotypeFontColor SECONDARY
   stereotypeFontSize FONTSIZE
-!endfunction
+!endprocedure
 
-!function basicStyle()
+!procedure basicStyle()
   backgroundColor BOXBG
   borderColor BORDERCOLOR
-!endfunction
+!endprocedure
 
-!function accentStyle()
+!procedure accentStyle()
   backgroundColor ACCENT
   borderColor ACCENTDARK
-!endfunction
+!endprocedure
 
-!function arrowStyle()
+!procedure arrowStyle()
   arrowColor ARROWCOLOR
   arrowFontName FONTNAME
   arrowFontColor ARROWFONTCOLOR
   arrowFontSize FONTSIZE
-!endfunction
+!endprocedure
 
 ' Class diagrams
 skinparam roundcorner 10
